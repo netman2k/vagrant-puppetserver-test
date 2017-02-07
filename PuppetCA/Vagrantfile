@@ -8,7 +8,7 @@ cd puppet-repository && ./scripts/init.sh
 
 hostnamectl set-hostname puppetca01.example.com
 systemctl restart systemd-hostnamed
-systemctl stop firewalld
+systemctl disable firewalld && systemctl stop firewalld
 
 echo "dns_alt_names = puppetca.example.com, puppet.example.com, puppetca, puppet" >> /etc/puppetlabs/puppet/puppet.conf
 

@@ -8,7 +8,7 @@ cd puppet-repository && ./scripts/init.sh
 
 hostnamectl set-hostname puppet01.example.com
 systemctl restart systemd-hostnamed
-systemctl stop firewalld
+systemctl disable firewalld && systemctl stop firewalld
 
 # Fixing the secondary interface IP unassignment
 systemctl resetart network
